@@ -6,16 +6,25 @@
   <title>Nirupam Mondal | Quant & Algo Trading</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-light: #f9f9f9;
+      --bg-dark: #121212;
+      --text-light: #333;
+      --text-dark: #f1f1f1;
+      --primary: #003366;
+    }
+
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
+      background: var(--bg-light);
+      color: var(--text-light);
+      transition: background 0.3s, color 0.3s;
     }
     header {
-      background: #003366;
+      background: var(--primary);
       color: white;
       padding: 2rem;
       text-align: center;
@@ -27,20 +36,39 @@
       background: white;
     }
     h2 {
-      color: #003366;
-      border-bottom: 2px solid #003366;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
       padding-bottom: 0.3rem;
     }
     a {
-      color: #003366;
+      color: var(--primary);
       text-decoration: none;
     }
     ul {
       padding-left: 1.2rem;
     }
+    .dark-mode {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    .dark-mode .container {
+      background: #1e1e1e;
+    }
+    .dark-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
   <header>
     <h1>Nirupam Mondal</h1>
     <p>Mechanical Engineering @ IIT (ISM) Dhanbad | Algo & Quant Enthusiast</p>
@@ -106,5 +134,11 @@
       <li>Hostel Maintenance Secretary (2023–2025)</li>
     </ul>
   </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </body>
 </html>
